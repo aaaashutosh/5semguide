@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Preview</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/png" href="logo.png">
+</head>
+<body>
+    <div class="logo"><img src="logo.png" alt="Logo"></div>
+    <header>
+        <nav>
+            <nav>
+                <ul>
+                    <li><button class="button" onclick="window.location.href='index.html'">Home</button></li>
+                    <li><button class="button"><a href="https://learncampusbook.blogspot.com/p/bicte-fifth-semester-bicte-note-bicte.html">Notes</a></button></li>
+                    <li><button class="button" onclick="window.location.href='syllabus.html'">Syllabus</button></li>
+                </ul>
+            </nav>
+        </nav>
+    </header>
+    <h1 style="margin:6px;">Preview:</h1>
+    <div style="margin:10px">
+        <button class="button" onclick="previewPDF('assessment.pdf')">Assessment in Teaching and Learning</button><br><br>
+        <button class="button" onclick="previewPDF('java_programming.pdf')">Java Programming Language</button><br><br>
+        <button class="button" onclick="previewPDF('data_communication.pdf')">Data Communication and Networks</button><br><br>
+        <button class="button" onclick="previewPDF('software_engineering.pdf')">Software Engineering and Project Management</button><br><br>
+        <button class="button" onclick="previewPDF('discrete_mathematics.pdf')">Discrete Mathematics</button>
+    </div>
+    <div id="pdf-preview" style="margin:10px; display:none;">
+        <iframe id="pdf-frame" width="100%" height="800px"></iframe>
+    </div>
+    <script>
+        function previewPDF(file) {
+            var pdfFrame = document.getElementById('pdf-frame');
+            var pdfPreview = document.getElementById('pdf-preview');
+            pdfFrame.src = file;
+            pdfPreview.style.display = 'block';
+        }
+    </script>
+</body>
+</html>
