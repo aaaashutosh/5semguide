@@ -3,9 +3,45 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>5th Semester Guide</title>
+    <title>Syllabus</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="icon" type="image/png" href="logo.png">
+    <style>
+        .button {
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            border: none;
+        }
+
+        dialog {
+            border: none;
+            border-radius: 5px;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            font-family: Arial, sans-serif;
+        }
+
+        dialog::backdrop {
+            background: rgba(0, 0, 0, 0.5);
+        }
+
+        .dialog-buttons {
+            margin-top: 20px;
+            text-align: right;
+        }
+
+        .dialog-buttons button {
+            padding: 5px 15px;
+            margin-left: 10px;
+            font-size: 14px;
+            cursor: pointer;
+        }
+    </style>
 </head>
 <body>
     <div class="logo"><img src="logo.png" alt="Logo"></div>
@@ -13,23 +49,54 @@
         <nav>
             <ul>
                 <li><button class="button" onclick="window.location.href='index.html'">Home</button></li>
-                <li><button class="button"><a href="https://learncampusbook.blogspot.com/p/bicte-fifth-semester-bicte-note-bicte.html">Notes</a></button></li>
+                <li><button class="button"><a href="https://learncampusbook.blogspot.com/p/bicte-fifth-semester-bicte-note-bicte.html" style="color: white; text-decoration: none;">Notes</a></button></li>
                 <li><button class="button" onclick="window.location.href='syllabus.html'">Syllabus</button></li>
             </ul>
         </nav>
     </header>
-    <main class="guide">
-        <h1>Welcome to BICTE 5th Semester Guide</h1>
-        <p>Explore the website for curriculum and notes of 5th semester courses.</p>
+    <main>
+        <h1>Syllabus:</h1>
         <div>
-            <h1 style="color:rgb(0, 228, 4)">For exclusive note of DCN click below: <br><br>
-               <button class="button" ><a href="https://notedinsights.com/data-communication-and-networks-notes/">DCN Notes</a></button>     
-               </h1>
+            <ul><h3>Subjects:</h3>
+                <li>Assessment in Teaching and Learning</li>
+                <li>Java Programming Language</li>
+                <li>Data Communication and Networks</li>
+                <li>Software Engineering and Project Management</li>
+                <li>Discrete Mathematics</li>
+            </ul>
+            <button class="button" onclick="window.location.href='preview.html'">For Preview Click here</button>
         </div>
+        <p>Download the syllabus PDF:</p>
+        <a href="#" id="downloadBtn" class="button">Download Syllabus &DownArrow;</a>
     </main>
-   
     <footer>
         <p>©️ Author: Aashutosh Khatiwada | 2024 All rights reserved.</p>
     </footer>
+
+    <!-- Under Maintenance Dialog -->
+    <dialog id="maintenanceDialog">
+        <p>Sorry, the download feature is currently under maintenance. Please check back later or simply use the previews given above!</p>
+        <div class="dialog-buttons">
+            <button id="closeDialog">Close</button>
+        </div>
+    </dialog>
+
+    <script>
+        // Get elements
+        const downloadBtn = document.getElementById('downloadBtn');
+        const maintenanceDialog = document.getElementById('maintenanceDialog');
+        const closeDialogBtn = document.getElementById('closeDialog');
+
+        // Show dialog when the download button is clicked
+        downloadBtn.addEventListener('click', function(event) {
+            event.preventDefault();  // Prevents the default action (downloading)
+            maintenanceDialog.showModal();  // Shows the dialog
+        });
+
+        // Close dialog when the close button is clicked
+        closeDialogBtn.addEventListener('click', function() {
+            maintenanceDialog.close();  // Closes the dialog
+        });
+    </script>
 </body>
 </html>
